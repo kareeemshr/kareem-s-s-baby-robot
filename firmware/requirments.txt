@@ -1,6 +1,7 @@
 ultralytics
 opencv-python
 numpy
-gpiozero; platform_machine == "aarch64"   # only installs on Raspberry Pi
+gpiozero; platform_machine == "aarch64"
 picamera2; platform_machine == "aarch64"
-adafruit_vl53l0x
+adafruit-circuitpython-vl53l0x; platform_machine == "aarch64"
+adafruit-blinka; platform_machine == "aarch64"

@@ -2,7 +2,7 @@ from gpiozero import *
 import time
 import cv2 as cv
 from ultralytics import YOLO
-from multiprocessing import Queue
+from queue import Queue, Empty
 import threading
 import random
 from picamera2 import Picamera2
@@ -17,15 +17,15 @@ front_left_motor =Motor(forward=22,backward=23)
 front_right_motor =Motor(forward=17,backward=18)
 back_left_motor = Motor(forward=24 , backward=25)
 back_right_motor = Motor(forward=12 , backward=13)
-robot = Robot(left=(back_left_motor,back_right_motor),right=(front_right_motor,back_right_motor))
+robot = Robot(left=(back_left_motor,front_left_motor),right=(front_right_motor,back_right_motor))
 tof_sensor_scl = 3
 tof_sensor_sda = 2
 picam = Picamera2()
 picam.configure(picam.create_preview_configuration(main={"size":(480,480)}))
 picam.start()
-dist =sensor.range
+
 detection_queue =Queue(maxsize=1)
-frame_lock =threading.lock()
+frame_lock =threading.Lock()
 latest_detections=[]
 
 
@@ -34,15 +34,15 @@ def vision_thread():
     while True:
         frame = picam.capture_array()
         small = cv.resize(frame,(320,320))
-        results =model.track(
+        results =model(
             small,
             verbose=False,
             imgsz=320,
-            Classes=[0],
-            half=True
+            classes=[0],
+            
             )
         if not detection_queue.full():
-            detection_queue(results[0])
+            detection_queue.put(results[0])
         
         with frame_lock:
             latest_detections = results[0].boxes.data.tolist()
@@ -54,17 +54,18 @@ thread.start()
 
 try:
     while True:
-        print(f"Distance: {sensor.range} mm")
+        dist =sensor.range
+        
         try:
             #takes the largest first person it detects 
-            results = detection_queue.getnowait()
+            results = detection_queue.get_nowait()
             person_boxes = [box for box in results.boxes.data if int(box[5])==0]
-        except Queue.Empty:
+        except Empty:
             person_boxes = []
         if person_boxes:
 
             x_center = (person_boxes[0][0]+person_boxes[0][2])/2
-            frame_center =320/2
+            frame_center =160
             if x_center <frame_center -40:
                 robot.left(0.4)
                 print("left")
