@@ -1,0 +1,10 @@
+part,ammount,price,link,small description of why its needed
+pi 8G,1,146.69$,https://besomi.com/jo_en/dedb0624-sc1112-raspberry-pi-5-8gb.html,to detect ppl using yolo(you can use a 4gig pi but from what i saw 8gig is faster)
+pi cam,1,11.82$,https://waslleh.com/product/5-mp-camera-for-raspberry-pi-made-in-china/,camera module that's connected to the pi
+motors,4,14.10$,https://besomi.com/ae_en/catalog/product/view/id/12415,idk its a motor this also includes wheels and chasis btw
+motor driver,2,4.94$,https://mikroelectron.com/product/me-135,this is connected to a Arduino/esp32 to control the motors
+Arduino,1,idk, ,just use any generic uno you have they should be cheap i think(this isnt important cus you can use the pi pins to control the drivers lol I forgot that)
+TOF sensor,1,6.28$,https://waslleh.com/product/vl53l0x-time-of-flight-tof-laser-ranging-sensor-breakout-940nm/,to maintain that 1meter distance(i alr have one with me)
+obstacle avoidance module(u can use this instead of the tof sensor),1,idk, ,use instead of a tof sensor if u want to but i prefer the tof
+power bank,1,idk, ,just use any power bank you have lying around
+wires, not sure yet, idk, ,just to remind you that stuff needs wires to be connected to each other btw
