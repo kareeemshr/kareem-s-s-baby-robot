@@ -10,7 +10,8 @@ also i made it cus its my dream to build something this cool(a robot that follow
 
 <ins>after i build the thing i will update it to give it behaviors like making it petable by using a touch sensor for example(making it a robot pet lol)</ins>
 
-heres the "schematic":<img width="1353" height="711" alt="schematic" src="https://github.com/user-attachments/assets/47f9f8b6-0d9e-49a0-a790-a11cec29c290" />
+heres the "schematic":<img width="1353" height="711" alt="schematic" src="https://github.com/user-attachments/assets/6c976b34-92a2-4c10-9821-b66945298798" />
+
 
 
 | part | ammount | value | link | notes|
