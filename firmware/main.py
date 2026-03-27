@@ -21,9 +21,10 @@ robot = Robot(left=(back_left_motor,front_left_motor),right=(front_right_motor,b
 tof_sensor_scl = 3
 tof_sensor_sda = 2
 picam = Picamera2()
+touch_sensor =Button(3)
 picam.configure(picam.create_preview_configuration(main={"size":(480,480)}))
 picam.start()
-
+time_since_last_pet =0
 detection_queue =Queue(maxsize=1)
 frame_lock =threading.Lock()
 latest_detections=[]
@@ -62,6 +63,18 @@ try:
             person_boxes = [box for box in results.boxes.data if int(box[5])==0]
         except Empty:
             person_boxes = []
+        petted=False
+        if touch_sensor.is_pressed:
+            petted =True
+        if petted and (time.time()-time_since_last_pet>2.0):
+            time_since_last_pet = time.time()
+            print("uwu being pet(cringe alret!!!)")
+            for i in range(4):
+                robot.left(0.7)
+                time.sleep(0.25)
+                robot.right(0.7)
+                time.sleep(0.25)
+            robot.stop()
         if person_boxes:
 
             x_center = (person_boxes[0][0]+person_boxes[0][2])/2
