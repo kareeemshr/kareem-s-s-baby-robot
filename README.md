@@ -24,4 +24,4 @@ heres the "schematic":<img width="1353" height="711" alt="schematic" src="https:
 | Obstacle Avoidance Module | 1 | idk | — | Alternative to TOF sensor, TOF preferred |
 | Power Bank | 1 | idk | — | Any power bank you have lying around |
 | Wires | TBD | idk | — | For connecting all components |
-
+|touch metal sensor|1|idk|-|to pet the pet(10 out of 10 poetry)|
