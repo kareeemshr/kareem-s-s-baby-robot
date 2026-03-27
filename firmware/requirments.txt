@@ -1,0 +1,6 @@
+ultralytics
+opencv-python
+numpy
+gpiozero; platform_machine == "aarch64"   # only installs on Raspberry Pi
+picamera2; platform_machine == "aarch64"
+adafruit_vl53l0x
