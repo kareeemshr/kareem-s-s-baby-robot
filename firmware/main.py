@@ -21,7 +21,7 @@ robot = Robot(left=(back_left_motor,front_left_motor),right=(front_right_motor,b
 tof_sensor_scl = 3
 tof_sensor_sda = 2
 picam = Picamera2()
-touch_sensor =Button(3)
+touch_sensor =Button(5)
 picam.configure(picam.create_preview_configuration(main={"size":(480,480)}))
 picam.start()
 time_since_last_pet =0
