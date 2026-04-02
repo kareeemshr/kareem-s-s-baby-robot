@@ -10,6 +10,7 @@ also i made it cus its my dream to build something this cool(a robot that follow
 
 <ins>after i build the thing i will update it to give it behaviors like making it petable by using a touch sensor for example(making it a robot pet lol)</ins>
 
+there isn't an exact way for u to use it lol its just a small pet that follows you around,im planning on integratinf speakers to make it meow later on
 heres the "schematic":<img width="1353" height="711" alt="schematic" src="https://github.com/user-attachments/assets/6c976b34-92a2-4c10-9821-b66945298798" />
 
 
