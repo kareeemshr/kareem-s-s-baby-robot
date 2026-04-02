@@ -25,3 +25,6 @@ heres the "schematic":<img width="1353" height="711" alt="schematic" src="https:
 | Power Bank | 1 | idk | — | Any power bank you have lying around |
 | Wires | TBD | idk | — | For connecting all components |
 |touch metal sensor|1|idk|-|to pet the pet(10 out of 10 poetry)|
+
+
+heres my zine page twin:<img width="1410" height="2000" alt="17751273586323935032726194307878" src="https://github.com/user-attachments/assets/5cc6fff7-d3c2-4271-aeb1-7125df343a47" />
